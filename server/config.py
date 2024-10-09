@@ -1,6 +1,6 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///instance/test_db.db'  # Đường dẫn đến database
-    SQLALCHEMY_TRACK_MODIFICATIONS = False  # Tắt theo dõi thay đổi để tiết kiệm bộ nhớ
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'supersecretkey'  # Secret key cho bảo mật
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATABASE = os.path.join(BASE_DIR, 'instance/test_db.db')
+    SECRET_KEY = 'your_secret_key'

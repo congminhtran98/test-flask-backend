@@ -12,6 +12,14 @@
 #     # Thực thi các script để tạo bảng nếu chưa có
 #     conn.close()
 
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+# db = SQLAlchemy()
+
+from peewee import SqliteDatabase
+from config import Config
+
+# Kết nối với cơ sở dữ liệu
+db = SqliteDatabase(Config.DATABASE)
+
+
